@@ -117,7 +117,7 @@ const AddItem = () => {
             <div>
               <h2
                 className="mb-5 text-3xl font-bold"
-                style={{ color: '#171a21' }}
+                style={{ color: 'white' }}
               >
                 Add an Item
               </h2>
@@ -153,20 +153,21 @@ const AddItem = () => {
                 <div className="form-control mt-2">
                   <label className="label">
                     <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Name
+                      Nama Barang
                     </span>
                   </label>
                   <input
                     className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
                     onChange={forName}
                     value={name}
+                    placeholder="Nama Barang"
                   />
                 </div>
 
                 <div className="form-control mt-2">
                   <label className="label">
                     <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Photo
+                      Foto Barang
                     </span>
                   </label>
                   <input
@@ -174,6 +175,7 @@ const AddItem = () => {
                     className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
                     onChange={forPhoto}
                     style={{ color: 'white' }}
+                    placeholder="Foto Barang"
                   />
                 </div>
 
@@ -188,6 +190,7 @@ const AddItem = () => {
                     onChange={forHargaJual}
                     value={hargaJual}
                     type="number"
+                    placeholder="Harga Jual"
                   />
                 </div>
 
@@ -202,13 +205,14 @@ const AddItem = () => {
                     className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
                     onChange={forHargaBeli}
                     value={hargaBeli}
+                    placeholder="Harga Beli"
                   />
                 </div>
 
                 <div className="form-control mt-2">
                   <label className="label">
                     <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Stok
+                      Stok Barang
                     </span>
                   </label>
                   <input
@@ -216,6 +220,7 @@ const AddItem = () => {
                     onChange={forStok}
                     value={stok}
                     type="number"
+                    placeholder="Stok Barang"
                   />
                 </div>
 
