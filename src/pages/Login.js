@@ -107,7 +107,7 @@ const Login = () => {
               </div>
               <button
                 type="button"
-                className="border-none"
+                className="btn btn-primary transition duration-300 ease-in-out transform hover:scale-110"
                 onClick={handleSwitchAuth}
                 style={{ border: 'none', backgroundColor: 'transparent' }}
               >

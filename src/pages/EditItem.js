@@ -23,6 +23,7 @@ const EditItem = () => {
 
   const [imageUpload, setImageUpload] = useState(false);
   const [btnDisabled, setBtnDisabled] = useState(false);
+  const [isLoadingEdit, setIsLoadingEdit] = useState(false);
 
   useEffect(() => {
     dispatch(fetchItem(id));
@@ -89,6 +90,7 @@ const EditItem = () => {
 
   const handleEditItem = e => {
     e.preventDefault();
+    setIsLoadingEdit(true);
     const payload = {
       name,
       photo,
@@ -109,6 +111,7 @@ const EditItem = () => {
       return toast.error('Price cant be less than zero');
     } else {
       dispatch(editItem(id, payload));
+      setIsLoadingEdit(false);
       history.push('/home');
     }
   };
@@ -247,7 +250,7 @@ const EditItem = () => {
                     <button
                       type="submit"
                       className={`btn btn-primary ${
-                        imageUpload ? 'loading' : ''
+                        imageUpload && isLoadingEdit ? 'loading' : ''
                       }`}
                       disabled={btnDisabled ? 'disable' : ''}
                     >
