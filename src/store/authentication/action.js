@@ -63,7 +63,6 @@ export const login = (payload, history, toast) => {
         if (data && data.error && data.error.message) {
           errorMessage = data.error.message;
         }
-
         throw new Error(errorMessage);
       }
     } catch (err) {

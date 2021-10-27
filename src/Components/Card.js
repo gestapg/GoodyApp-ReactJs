@@ -44,7 +44,10 @@ function Card({ item }) {
 
   return (
     <>
-      <div className="card bordered bg-primary transition duration-500 ease-in-out transform hover:scale-110">
+      <div
+        className="card bordered bg-primary drop-shadow-xl transition duration-500 ease-in-out transform hover:scale-110"
+        // style={{ backgroundColor: 'white' }}
+      >
         <figure
           className="bg-cover bg-center h-60"
           style={{ backgroundImage: `url(${item.photo})` }}
@@ -58,14 +61,14 @@ function Card({ item }) {
           </div>
           <div className="justify-end card-actions">
             <button
-              className="btn btn-accent transition duration-300 ease-in-out transform hover:-translate-y-2"
+              className="btn btn-primary rounded-full transition duration-300 ease-in-out transform hover:-translate-y-2"
               onClick={handleDetail}
               style={{ width: '80px' }}
             >
               Detail
             </button>
             <button
-              className="btn btn-secondary transition duration-300 ease-in-out transform hover:-translate-y-2"
+              className="btn btn-primary rounded-full  transition duration-300 ease-in-out transform hover:-translate-y-2"
               onClick={handleEdit}
               style={{ width: '80px' }}
             >
@@ -73,7 +76,7 @@ function Card({ item }) {
             </button>
 
             <button
-              className="btn btn-warning transition duration-300 ease-in-out transform hover:-translate-y-2"
+              className="btn btn-secondary rounded-full transition duration-300 ease-in-out transform hover:-translate-y-2"
               onClick={handleDelete}
               style={{ width: '80px' }}
             >

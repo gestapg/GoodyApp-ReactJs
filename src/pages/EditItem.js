@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { storage } from '../firebaseconfig';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import 'react-toastify/dist/ReactToastify.css';
+import backgroundImage from '../assets/background-edit.jpg';
 
 import { editItem, fetchItem } from '../store/items/action';
 
@@ -125,126 +126,136 @@ const EditItem = () => {
         draggable
         pauseOnHover
       />
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <div className="m-10">
-          <div className="justify-between grid grid-cols-2 ml-2 mr-2">
-            <div>
-              <h2
-                className="mb-5 text-3xl font-bold"
-                style={{ color: 'white' }}
-              >
-                Edit an Item
-              </h2>
-            </div>
-            <div className="text-right">
-              <button
-                className="btn btn-square btn-ghost mt-2"
-                onClick={handleToHome}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  className="bi bi-x-lg"
-                  viewBox="0 0 16 16"
+      <div
+        className="hero min-h-screen bg-base-200 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+        }}
+      >
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div
+          style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+        >
+          <div className="m-10">
+            <div className="justify-between grid grid-cols-2 ml-2 mr-2">
+              <div>
+                <h2
+                  className="mb-5 text-3xl font-bold"
+                  style={{ color: 'white' }}
                 >
-                  <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div
-            className="card shadow-2xl"
-            style={{
-              backgroundColor: '#2a475e',
-              borderWidth: 1,
-              borderColor: '#66c0f4',
-            }}
-          >
-            <div className="m-8 ">
-              <form action="" type="submit" onSubmit={handleEditItem}>
-                <div className="form-control mt-2">
-                  <label className="label">
-                    <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Name
-                    </span>
-                  </label>
-                  <input
-                    className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-                    onChange={forName}
-                    value={name}
-                  />
-                </div>
-
-                <div className="form-control mt-2">
-                  <label className="label">
-                    <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Photo
-                    </span>
-                  </label>
-                  <input
-                    style={{ color: 'white' }}
-                    type="file"
-                    className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-                    onChange={forPhoto}
-                  />
-                </div>
-
-                <div className="form-control mt-2">
-                  <label className="label">
-                    <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Harga Jual
-                    </span>
-                  </label>
-                  <input
-                    className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-                    onChange={forHargaJual}
-                    value={hargaJual}
-                    type="number"
-                  />
-                </div>
-
-                <div className="form-control mt-2">
-                  <label className="label">
-                    <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Harga Beli
-                    </span>
-                  </label>
-                  <input
-                    type="number"
-                    className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-                    onChange={forHargaBeli}
-                    value={hargaBeli}
-                  />
-                </div>
-
-                <div className="form-control mt-2">
-                  <label className="label">
-                    <span className="label-text" style={{ color: '#c7d5e0' }}>
-                      Stok
-                    </span>
-                  </label>
-                  <input
-                    className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-                    onChange={forStok}
-                    value={stok}
-                    type="number"
-                  />
-                </div>
-
-                <div className="mt-6 mb-3 text-center">
-                  <button
-                    type="submit"
-                    className={`btn btn-primary ${
-                      imageUpload ? 'loading' : ''
-                    }`}
-                    disabled={btnDisabled ? 'disable' : ''}
+                  Edit an Item
+                </h2>
+              </div>
+              <div className="text-right">
+                <button
+                  className="btn btn-square btn-ghost mt-2"
+                  onClick={handleToHome}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    className="bi bi-x-lg"
+                    viewBox="0 0 16 16"
                   >
-                    Edit an Item!
-                  </button>
-                </div>
-              </form>
+                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              className="card shadow-2xl"
+              style={{
+                backgroundColor: '#2a475e',
+                borderWidth: 1,
+                borderColor: '#66c0f4',
+              }}
+            >
+              <div className="m-8 ">
+                <form action="" type="submit" onSubmit={handleEditItem}>
+                  <div className="form-control mt-2">
+                    <label className="label">
+                      <span className="label-text" style={{ color: '#c7d5e0' }}>
+                        Name
+                      </span>
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                      onChange={forName}
+                      value={name}
+                    />
+                  </div>
+
+                  <div className="form-control mt-2">
+                    <label className="label">
+                      <span className="label-text" style={{ color: '#c7d5e0' }}>
+                        Photo
+                      </span>
+                    </label>
+                    <input
+                      style={{ color: 'white' }}
+                      type="file"
+                      className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                      onChange={forPhoto}
+                    />
+                  </div>
+
+                  <div className="form-control mt-2">
+                    <label className="label">
+                      <span className="label-text" style={{ color: '#c7d5e0' }}>
+                        Harga Jual
+                      </span>
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                      onChange={forHargaJual}
+                      value={hargaJual}
+                      type="number"
+                    />
+                  </div>
+
+                  <div className="form-control mt-2">
+                    <label className="label">
+                      <span className="label-text" style={{ color: '#c7d5e0' }}>
+                        Harga Beli
+                      </span>
+                    </label>
+                    <input
+                      type="number"
+                      className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                      onChange={forHargaBeli}
+                      value={hargaBeli}
+                    />
+                  </div>
+
+                  <div className="form-control mt-2">
+                    <label className="label">
+                      <span className="label-text" style={{ color: '#c7d5e0' }}>
+                        Stok
+                      </span>
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                      onChange={forStok}
+                      value={stok}
+                      type="number"
+                    />
+                  </div>
+
+                  <div className="mt-6 mb-3 text-center">
+                    <button
+                      type="submit"
+                      className={`btn btn-primary ${
+                        imageUpload ? 'loading' : ''
+                      }`}
+                      disabled={btnDisabled ? 'disable' : ''}
+                    >
+                      Edit an Item!
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

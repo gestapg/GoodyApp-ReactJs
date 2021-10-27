@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import LoadingSpinner from '../Components/UI/LoadingSpinner';
 
+import Header from '../Components/Layouts/Header';
 import Card from '../Components/Card';
 import { fetchItems } from '../store/items/action';
 
@@ -15,6 +16,8 @@ const HomePage = () => {
 
   return (
     <>
+      <Header />
+
       {isLoading ? (
         <div className="centered">
           <LoadingSpinner />

@@ -59,7 +59,7 @@ export const editItem = (id, payload) => {
     await updateDoc(doc(db, 'items', id), payload);
 
     dispatch({ type: EDIT_ITEM });
-    // dispatch(fetchItems());
+    dispatch(fetchItems());
   };
 };
 

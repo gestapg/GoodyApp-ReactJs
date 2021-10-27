@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { login, register } from '../store/authentication/action';
-import backgroundImage from './free-t4ergergd.jpg';
+// import backgroundImage from './free-t4ergergd.jpg';
 
 const Login = () => {
   const history = useHistory();
@@ -61,17 +61,18 @@ const Login = () => {
       <ToastContainer />
       <div
         className="hero min-h-screen bg-base-200 bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{
+          backgroundImage: `url(${'https://www.ikea.com/images/office-cbb84b757d5f050bf53ebb336af10930.jpg?f=xxxl'})`,
+        }}
       >
         <div class="hero-overlay bg-opacity-60"></div>
         <div className="flex-col justify-center hero-content lg:flex-row">
           <div className="text-center lg:text-left">
             <h1 className="mb-5 text-5xl font-bold">Hello there,</h1>
             <h1 className="mb-5 text-5xl font-bold">Welcome!</h1>
-            <p className="mb-5 pr-20">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <p className="mb-5 pr-20 text-xl">
+              Find your thing in this website! You'll find a good match to your
+              stlye here, feel free to register and scrolling around!
             </p>
           </div>
           <form
